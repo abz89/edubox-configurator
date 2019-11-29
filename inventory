@@ -1,3 +1,5 @@
-[router]
-192.168.8.1
-10.20.30.254
+[openwrt]
+10.20.30.254 openwrt_install_recommended_packages=no
+
+[openwrt:vars]
+ansible_remote_tmp=/tmp/ansible  #Reduce flash wear on target device

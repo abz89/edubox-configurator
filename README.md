@@ -30,8 +30,8 @@ ansible-galaxy install gekmihesg.openwrt
 - edit host in `invetory` file as needed.
 - create and edit `authorized_keys` with desired ssh key.
 - place the desired openwrt firmware image to `image.bin`.
-- run `ansible-playbook setup.yml` for flashing custom firmware then config, or
-- run `ansible-playbook config.yml` for running config, or
+- run `ansible-playbook setup.yml -i inventory` for flashing custom firmware then config, or
+- run `ansible-playbook config.yml -i inventory` for running config, or
 
 ## License
 

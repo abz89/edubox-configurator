@@ -1,5 +1,6 @@
 ---
-- hosts: router
+- hosts: openwrt
+  gather_facts: no
   vars_files:
     - vars.yml
   remote_user: root
@@ -13,7 +14,7 @@
 
     - name: Set ROOT Password
       shell: |
-        sed -i 's,root:[^:]*,root:$1$7cd/A4q0$XQkoDTD54PvTTeAXjOiaf1,' "/etc/shadow"
+        sed -i 's,root:[^:]*,root:{{ root_password }},' "/etc/shadow"
 
     - name: Set Local Hostname
       lineinfile:
@@ -89,4 +90,14 @@
     - name: Apply Changes
       uci:
         command: commit
-      notify: reload wifi
+
+    - name: Rebooting
+      command: reboot
+
+    - name: Wait for server to restart
+      local_action:
+        module: wait_for
+          host=10.20.30.254
+          port=22
+          delay=10
+          timeout=300
