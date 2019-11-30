@@ -4,7 +4,7 @@ Setup/manage "Edubox Router" device with Ansible but without Python.
 
 ## Requirements
 
-\*Ansible (Of course :D)
+1. Ansible (Of course :D)
 
 Debian/Ubuntu
 
@@ -18,7 +18,7 @@ MacOS with Homebrew
 brew install ansible
 ```
 
-\*Ansible Role: openwrt as dependencies
+2. Ansible Role: openwrt (as dependencies)
 
 ```
 ansible-galaxy install gekmihesg.openwrt

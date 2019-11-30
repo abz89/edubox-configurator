@@ -100,4 +100,4 @@
           host=10.20.30.254
           port=22
           delay=10
-          timeout=300
+          timeout=700
